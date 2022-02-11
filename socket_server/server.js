@@ -6,6 +6,7 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 
 app.get('/', (req, res) => {
+    console.log("sending index.html");
     res.sendFile(__dirname + '/index.html');
 });
 
@@ -16,5 +17,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(8080, () => {
-    console.log('listening on *:8080')
+    console.log('server listening on *:8080')
 });
